@@ -5,10 +5,20 @@ import cherrypy
 class Root(object):
     @cherrypy.expose
     def index(self):
+#       return """<html lang="en">
+#                  <head><h1>Video Call</h1></head>
+#                  <body></body>
+#                  <script crossorigin src="https://unpkg.com/@daily-co/daily-js"></script>
+#                  <script>
+#                  callFrame = window.DailyIframe.createFrame();
+#                  callFrame.join({ url: 'https://friendover.daily.co/hello' })
+#                  </script>
+#                  </html>"""
+
         return """<html lang="en">
                   <head><h1>Video Call</h1></head>
                   <body></body>
-                  <script crossorigin src="https://unpkg.com/@daily-co/daily-js"></script>
+                  <script crossorigin src=new.js></script>
                   <script>
                   callFrame = window.DailyIframe.createFrame();
                   callFrame.join({ url: 'https://friendover.daily.co/hello' })
