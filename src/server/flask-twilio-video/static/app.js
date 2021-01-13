@@ -69,6 +69,7 @@ function updateParticipantCount(){
         count.innerHTML = 'Disconnected.';
     else
         count.innerHTML = (room.participants.size + 1) + ' participants online.';
+    // TODO: Recognize when count.innerHTML is two. Let local user be bottom, away user be top
 };
 
 function participantConnected(participant) {
