@@ -8,12 +8,9 @@ import logo from '../images/whiteall.png'
 
 const useStyles = makeStyles((theme) => ({
     background: {
-        backgroundColor: '#6CD2E6',
+        backgroundColor: '#BAD2E3',
         height: '100vh',
-        width: '100%'
-    },
-    homeMessage: {
-        height: '100%',
+        paddingLeft: '55%'
     },
     message: {
         width: '100%',
@@ -28,43 +25,32 @@ export default function Home() {
         <div className={classes.background}>
             <Grid 
                 container 
-                direction='row'
-                justify='flex-end'
-                alignItems='center'
-                className={classes.homeMessage}
+                direction='column'
+                justify='center'
+                alignItems='flex-start'
+                style={{paddingTop: '22%', paddingRight: '20%'}}
             >
+                <Grid item className={classes.message}>
+                    <img src={logo} style={{height: '150px'}}/>
+                </Grid>
+                <Grid item className={classes.message}>
+                    <Typography color='textSecondary' variant='h4'>At FriendOver, we believe that staying in should stay exciting.</Typography>
+                </Grid>
+                <Grid item className={classes.message}>
+                    <Typography color='textSecondary' variant='h6'>We are the first videoconferencing site to optimize a platform for the unique social and conversational needs of kids K-6.</Typography>
+                </Grid>
                 <Grid 
                     item 
                     container 
-                    xs={6} 
-                    direction='column'
-                    justify='center'
-                    alignItems='flex-start'
-                    style={{padding: '10%'}}
+                    direction='row'
+                    justify='flex-start'
+                    alignItems='center'
+                    className={classes.message}
                 >
-                    <Grid item className={classes.message}>
-                        <img src={logo} style={{height: '140px'}}/>
-                    </Grid>
-                    <Grid item className={classes.message}>
-                        <Typography color='textSecondary' variant='h5'>At FriendOver, we believe that staying in should stay exciting.</Typography>
-                    </Grid>
-                    <Grid item className={classes.message}>
-                        <Typography color='textSecondary' variant='h7'>We are the first videoconferencing site to optimize a platform for the unique social and conversational needs of kids K-6.</Typography>
-                    </Grid>
-                    <Grid 
-                        item 
-                        container 
-                        direction='row'
-                        justify='flex-start'
-                        alignItems='center'
-                        className={classes.message}
-                    >
-                        <Button variant='contained' style={{width: 170, borderRadius: '25px'}}>LEARN MORE</Button>
-                        <Button variant='contained' style={{width: 170, borderRadius: '25px', marginLeft: '40px'}}>Parent Sign Up</Button>
-                    </Grid>
-                    
+                    <Button variant='contained' style={{width: '45%', borderRadius: '30px'}}>LEARN MORE</Button>
+                    <Button variant='outlined' style={{width: '45%', borderRadius: '30px', marginLeft: '30px'}}>Parent Sign Up</Button>
                 </Grid>
-
+                
             </Grid>
         </div>
 

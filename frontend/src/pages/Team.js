@@ -6,8 +6,8 @@ import { Box, Typography } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
     section: {
-        backgroundColor: 'green',
-        width: '100%',
+        backgroundColor: '#BAD2E3',
+        // width: '100%',
         height: '100vh',
         padding: '200px 350px'
     },
@@ -15,34 +15,35 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Team() {
     const classes = useStyles();
-
+    const profiles = [
+        {
+            'name': 'Name', 
+            'description': 'Description'
+        },
+        {
+            'name': 'Name', 
+            'description': 'Description'
+        },
+        {
+            'name': 'Name', 
+            'description': 'Description'
+        }
+    ]
     return (
-        <Grid 
-            container 
-            direction='row'
-            justify='center'
-            alignItems='center'
-            className={classes.section}
-        >
-            <Grid item container direction='column' justify='center' alignItems='center' spacing={5}>
+        <div className={classes.section}>
+            <Grid container direction='column' justify='center' alignItems='center' spacing={5}>
                 <Grid item>
-                    <Typography variant='h3'>
-                        <Box fontWeight='fontWeightBold'>Who are we?</Box>
+                    <Typography variant='h3' color='primary'>
+                        Who are we?
                     </Typography>
                 </Grid>
                 <Grid item container direction='row' >
-                    <Grid item >
-                        <Grid item>Picture</Grid>
-                        <Grid item>Name Description</Grid>
-                    </Grid>
-                    <Grid item direction='column' justify='center'>
-                        <Grid item>Picture</Grid>
-                        <Grid item>Name Description</Grid>
-                    </Grid>
-                    <Grid item direction='column'>
-                        <Grid item>Picture</Grid>
-                        <Grid item>Name Description</Grid>
-                    </Grid>
+                    {profiles.map((profile) => (
+                        <Grid container direction='column' justify='center' alignItems='center' xs={4}>
+                            <Grid item>Picture</Grid>
+                            <Grid item>Name Description</Grid>
+                        </Grid>
+                    ))}
                 </Grid>
                 <Grid item>
                     <Typography variant='h6' align='center'>
@@ -55,6 +56,6 @@ export default function Team() {
                     </Typography>
                 </Grid>
             </Grid>
-        </Grid>
+        </div>
 );
 }

@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
     marginRight: '30px'
   },
   navButton: {
-    margin: '0px 20px'
+    margin: '0px 10px'
   }
 }));
 
@@ -33,10 +33,10 @@ export default function NavBar() {
           <img src={logo} alt='' style={{ height: 70 }}></img>
         </div>
         <div className={classes.navButtonGroup}>
-          <Button color="inherit" className={classes.navButton}>About Us</Button>
-          <Button color="inherit" className={classes.navButton}>How It Works</Button>
-          <Button color="inherit" className={classes.navButton}>Newsletters/Blogs</Button>
-          <Button color="inherit" className={classes.navButton}>Careers</Button>
+          <Button variant='text' color="inherit" disableRipple disableFocusRipple className={classes.navButton}>About Us</Button>
+          <Button variant='text' color="inherit" disableRipple disableFocusRipple className={classes.navButton}>How It Works</Button>
+          <Button variant='text' color="inherit" disableRipple disableFocusRipple className={classes.navButton}>Newsletters/Blogs</Button>
+          <Button variant='text' color="inherit" disableRipple disableFocusRipple className={classes.navButton}>Careers</Button>
         </div>
 
       </Toolbar>

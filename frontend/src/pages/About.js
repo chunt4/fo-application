@@ -7,8 +7,7 @@ import { Box, Typography } from '@material-ui/core';
 const useStyles = makeStyles((theme) => ({
     section: {
         backgroundColor: '#FFF',
-        width: '100%',
-        padding: '200px 350px'
+        padding: '200px 265px'
     },
 }));
 
@@ -25,17 +24,17 @@ export default function About() {
         >
             <Grid item container direction='column' justify='center' alignItems='center' spacing={5}>
                 <Grid item>
-                    <Typography variant='h3'>
-                        <Box fontWeight='fontWeightBold'>What is FriendOver?</Box>
+                    <Typography variant='h3' color='primary'>
+                        What is FriendOver?
                     </Typography>
                 </Grid>
                 <Grid item>
-                    <Typography variant='h6' align='center'>
-                        Combining features of traditional videoconferencing like video, chat, and screen-share with a bundle of collaborative multiplayer games, <b>FriendOver gets kids moving, talking and laughing with their friends even during virtual playdates.</b>
+                    <Typography variant='body1' color='primary' align='center'>
+                        Combining features of traditional videoconferencing like video, chat, and screen-share with a bundle of collaborative multiplayer games, <b style={{fontFamily: 'Avenir-Black'}}>FriendOver gets kids moving, talking and laughing with their friends even during virtual playdates.</b>
                     </Typography>
                 </Grid>
                 <Grid item>
-                    <Typography variant='h6' align='center'>
+                    <Typography variant='body1' color='primary' align='center'>
                         FriendOver connects kids: on rainy days, snow days, over long distances, and whenever Mom or Dad is too busy or tired to drive them to the park :)
                     </Typography>
                 </Grid>
