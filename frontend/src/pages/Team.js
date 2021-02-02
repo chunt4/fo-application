@@ -1,32 +1,41 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid';
-
-import { Box, Typography } from '@material-ui/core';
+import { Avatar, Grid, Typography } from '@material-ui/core';
+import picture from '../images/renee_avatar.jpg'
 
 const useStyles = makeStyles((theme) => ({
     section: {
-        backgroundColor: '#BAD2E3',
-        // width: '100%',
-        height: '100vh',
-        padding: '200px 350px'
+        backgroundColor: theme.backgroundColor.blue,
+        padding: '200px 265px'
     },
+    avatarContainer: {
+        margin: '18px 0px'
+    },
+    avatarImage: {
+        height: 150, 
+        width: 150, 
+        border: '3px solid #140c57', 
+        marginBottom: 50
+    }
 }));
 
 export default function Team() {
     const classes = useStyles();
     const profiles = [
         {
-            'name': 'Name', 
-            'description': 'Description'
+            'name': 'Renee Yaseen', 
+            'description': 'CEO',
+            'picture': picture
         },
         {
             'name': 'Name', 
-            'description': 'Description'
+            'description': 'Description',
+            'picture': picture
         },
         {
             'name': 'Name', 
-            'description': 'Description'
+            'description': 'Description',
+            'picture': picture
         }
     ]
     return (
@@ -39,19 +48,20 @@ export default function Team() {
                 </Grid>
                 <Grid item container direction='row' >
                     {profiles.map((profile) => (
-                        <Grid container direction='column' justify='center' alignItems='center' xs={4}>
-                            <Grid item>Picture</Grid>
-                            <Grid item>Name Description</Grid>
+                        <Grid container direction='column' justify='center' alignItems='center' xs={4} className={classes.avatarContainer}>
+                            <Grid item><Avatar alt="Renee Yaseen" src={profile.picture} className={classes.avatarImage} /></Grid>
+                            <Grid item><Typography variant='subtitle1' color='primary'>{profile.name}</Typography></Grid>
+                            <Grid item><Typography variant='subtitle1' color='primary'>{profile.description}</Typography></Grid>
                         </Grid>
                     ))}
                 </Grid>
                 <Grid item>
-                    <Typography variant='h6' align='center'>
-                        Combining features of traditional videoconferencing like video, chat, and screen-share with a bundle of collaborative multiplayer games, <b>FriendOver gets kids moving, talking and laughing with their friends even during virtual playdates.</b>
+                    <Typography variant='body1' color='primary' align='center'>
+                        Combining features of traditional videoconferencing like video, chat, and screen-share with a bundle of collaborative multiplayer games, <b style={{fontFamily: 'Avenir-Black'}}>FriendOver gets kids moving, talking and laughing with their friends even during virtual playdates.</b>
                     </Typography>
                 </Grid>
                 <Grid item>
-                    <Typography variant='h6' align='center'>
+                    <Typography variant='body1' color='primary' align='center'>
                         FriendOver connects kids: on rainy days, snow days, over long distances, and whenever Mom or Dad is too busy or tired to drive them to the park :)
                     </Typography>
                 </Grid>

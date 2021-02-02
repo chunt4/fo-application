@@ -1,9 +1,10 @@
 import { createMuiTheme } from '@material-ui/core/styles';
-import AvenirWoff2 from './fonts/Avenir-Regular.woff2'
-import AvenirBlackWoff2 from './fonts/Avenir-Black.woff2'
-import AvenirBookWoff2 from './fonts/Avenir-Book.woff2'
 
 const Theme = createMuiTheme({
+  backgroundColor: {
+    white: '#fafafa',
+    blue: '#BAD2E3'
+  },
   palette: {
     primary: {
         main: '#140c57'
@@ -26,11 +27,15 @@ const Theme = createMuiTheme({
     },
     h6: {
       fontFamily: 'Avenir-Black',
-      fontSize: '1.2rem'
+      fontSize: '1.15rem'
+    },
+    subtitle1: {
+      fontFamily: 'Avenir-Black',
+      fontSize: '1.3rem'
     },
     body1: {
       fontFamily: 'Avenir-Book',
-      fontSize: '1.2rem'
+      fontSize: '1.3rem'
     },
     button: {
       fontFamily: 'Avenir-Black',

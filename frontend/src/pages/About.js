@@ -1,12 +1,10 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid';
-
-import { Box, Typography } from '@material-ui/core';
+import { Grid, Typography } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
     section: {
-        backgroundColor: '#FFF',
+        backgroundColor: theme.backgroundColor.white,
         padding: '200px 265px'
     },
 }));

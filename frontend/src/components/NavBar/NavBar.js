@@ -1,20 +1,19 @@
 import React from 'react'
-import {
-  Button,
-  AppBar,
-  Toolbar,
-  Typography,
-  IconButton
-} from '@material-ui/core'
-import logo from '../../images/whiteall.png'
 import { makeStyles } from '@material-ui/core/styles';
+import { AppBar, Button, Toolbar } from '@material-ui/core'
+import logo from '../../images/whiteall.png'
 
 const useStyles = makeStyles((theme) => ({
+  logoContainer: {
+    flexGrow: 1
+  },
+  logoImage: {
+    height: 70
+  },
   navContainer: {
     background: 'transparent',
     boxShadow: 'none',
-    padding: '40px 30px',
-    flexGrow: 1
+    padding: '40px 30px'
   },
   navButtonGroup: {
     marginRight: '30px'
@@ -29,14 +28,12 @@ export default function NavBar() {
   return (
     <AppBar position="absolute" className={classes.navContainer}>
       <Toolbar>
-        <div style={{ flexGrow: 1 }}>
-          <img src={logo} alt='' style={{ height: 70 }}></img>
-        </div>
+        <a className={classes.logoContainer} href='/'><img src={logo} alt='FriendOver' className={classes.logoImage} /></a>
         <div className={classes.navButtonGroup}>
-          <Button variant='text' color="inherit" disableRipple disableFocusRipple className={classes.navButton}>About Us</Button>
-          <Button variant='text' color="inherit" disableRipple disableFocusRipple className={classes.navButton}>How It Works</Button>
-          <Button variant='text' color="inherit" disableRipple disableFocusRipple className={classes.navButton}>Newsletters/Blogs</Button>
-          <Button variant='text' color="inherit" disableRipple disableFocusRipple className={classes.navButton}>Careers</Button>
+          <Button variant='text' color="inherit" className={classes.navButton}>About Us</Button>
+          <Button variant='text' color="inherit" className={classes.navButton}>How It Works</Button>
+          <Button variant='text' color="inherit" className={classes.navButton}>Newsletters/Blogs</Button>
+          <Button variant='text' color="inherit" className={classes.navButton}>Careers</Button>
         </div>
 
       </Toolbar>

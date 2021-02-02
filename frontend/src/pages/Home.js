@@ -1,20 +1,25 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid';
-
-import Paper from '@material-ui/core/Paper';
-import { Button, Typography } from '@material-ui/core';
+import { Button, Grid, Typography } from '@material-ui/core';
 import logo from '../images/whiteall.png'
 
 const useStyles = makeStyles((theme) => ({
     background: {
-        backgroundColor: '#BAD2E3',
+        backgroundColor: theme.backgroundColor.blue,
         height: '100vh',
         paddingLeft: '55%'
+    },
+    messageContainer: {
+        paddingTop: '22%', 
+        paddingRight: '20%'
     },
     message: {
         width: '100%',
         padding: theme.spacing(2), 
+    },
+    messageButtons: {
+        width: '45%', 
+        borderRadius: '30px'
     }
 }));
 
@@ -28,7 +33,7 @@ export default function Home() {
                 direction='column'
                 justify='center'
                 alignItems='flex-start'
-                style={{paddingTop: '22%', paddingRight: '20%'}}
+                className={classes.messageContainer}
             >
                 <Grid item className={classes.message}>
                     <img src={logo} style={{height: '150px'}}/>
@@ -47,8 +52,8 @@ export default function Home() {
                     alignItems='center'
                     className={classes.message}
                 >
-                    <Button variant='contained' style={{width: '45%', borderRadius: '30px'}}>LEARN MORE</Button>
-                    <Button variant='outlined' style={{width: '45%', borderRadius: '30px', marginLeft: '30px'}}>Parent Sign Up</Button>
+                    <Button variant='contained' className={classes.messageButtons} >LEARN MORE</Button>
+                    <Button variant='outlined' className={classes.messageButtons} style={{ marginLeft: '30px' }}>Parent Sign Up</Button>
                 </Grid>
                 
             </Grid>
