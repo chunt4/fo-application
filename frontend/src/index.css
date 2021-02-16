@@ -1,25 +1,5 @@
-@font-face {
-  font-family: 'Avenir-Regular';
-  src: local('Avenir-Regular'), url(./fonts/Avenir-Regular.woff2) format('woff2');
-}
-
-@font-face {
-  font-family: 'Avenir-Black';
-  src: local('Avenir-Black'), url(./fonts/Avenir-Black.woff2) format('woff2');
-}
-
-@font-face {
-  font-family: 'Avenir-Book';
-  src: local('Avenir-Book'), url(./fonts/Avenir-Book.woff2) format('woff2');
-}
-
 body {
   margin: 0;
-  font-family: 'Avenir-Regular', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 code {

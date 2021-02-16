@@ -2,15 +2,16 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Button, Grid, Typography } from '@material-ui/core';
 import logo from '../images/whiteall.png'
+import background from '../images/home_background.jpg'
 
 const useStyles = makeStyles((theme) => ({
     background: {
-        backgroundColor: theme.backgroundColor.blue,
+        backgroundImage: `url(${background})`,
         height: '100vh',
-        paddingLeft: '55%'
+        paddingLeft: '50%'
     },
     messageContainer: {
-        paddingTop: '22%', 
+        paddingTop: '28%', 
         paddingRight: '20%'
     },
     message: {
@@ -18,8 +19,7 @@ const useStyles = makeStyles((theme) => ({
         padding: theme.spacing(2), 
     },
     messageButtons: {
-        width: '45%', 
-        borderRadius: '30px'
+        color: '#FFF'
     }
 }));
 
@@ -36,13 +36,13 @@ export default function Home() {
                 className={classes.messageContainer}
             >
                 <Grid item className={classes.message}>
-                    <img src={logo} style={{height: '150px'}}/>
+                    <img src={logo} style={{height: '182px'}}/>
                 </Grid>
                 <Grid item className={classes.message}>
                     <Typography color='textSecondary' variant='h4'>At FriendOver, we believe that staying in should stay exciting.</Typography>
                 </Grid>
                 <Grid item className={classes.message}>
-                    <Typography color='textSecondary' variant='h6'>We are the first videoconferencing site to optimize a platform for the unique social and conversational needs of kids K-6.</Typography>
+                    <Typography color='textSecondary' variant='h6'>Friendover's motion-activated games don't require a console or remotes. Experience the next generation in online gaming.</Typography>
                 </Grid>
                 <Grid 
                     item 

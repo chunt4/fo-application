@@ -1,6 +1,7 @@
 import { createMuiTheme } from '@material-ui/core/styles';
 
 const Theme = createMuiTheme({
+  
   backgroundColor: {
     white: '#fafafa',
     blue: '#BAD2E3'
@@ -15,51 +16,76 @@ const Theme = createMuiTheme({
     }
   },
   typography: {
+    fontFamily: [
+      'Nunito'
+    ].join(','),
     typography: {
-      fontFamily: 'Avenir-Regular'
     },
     h3: {
-      fontFamily: 'Avenir-Black'
+      fontWeight: 900,
+      fontSize: '60px'
     },
     h4: {
-      fontFamily: 'Avenir-Black',
-      fontSize: '1.9rem'
+      fontWeight: 800,
+      fontSize: '38px'
+    },
+    h5: {
+      fontWeight: 600,
+      fontSize: '30px'
     },
     h6: {
-      fontFamily: 'Avenir-Black',
-      fontSize: '1.15rem'
+      fontWeight: 400,
+      fontSize: '30px',
+      lineHeight: 1.5
     },
     subtitle1: {
-      fontFamily: 'Avenir-Black',
-      fontSize: '1.3rem'
+      fontWeight: 900,
+      fontSize: '30px'
+    },
+    subtitle2: {
+      fontWeight: 900,
+      fontSize: '15px',
+      textTransform: 'uppercase'
     },
     body1: {
-      fontFamily: 'Avenir-Book',
-      fontSize: '1.3rem'
+      fontWeight: 400,
+      fontSize: '40px'
+    },
+    body2: {
+      fontWeight: 400,
+      fontSize: '30px'
     },
     button: {
-      fontFamily: 'Avenir-Black',
+      fontWeight: 900,
+      fontSize: '25px'
+    },
+    link: {
+      fontWeight: 900
     }
   },
   overrides:{
     MuiButton:{
       contained:{
         backgroundColor: '#FFF',
-        height: '50px',
-        fontSize: '1rem'
+        height: '63px',
+        fontSize: '1rem',
+        width: '300px', 
+        borderRadius: '35px',
       },
       outlined: {
-        height: '50px',
-        border: '4px solid',
-        fontSize: '1rem'
+        height: '63px',
+        border: '5px solid',
+        fontSize: '1rem',
+        width: '300px', 
+        borderRadius: '35px',
       },
       text: {
         fontSize: '.8rem'
-      }
+      },
     },
     MuiCssBaseline: {
       '@global': {
-        '@font-face': ['Avenir-Regular', 'Avenir-Black', 'Avenir-Book'],
+        '@font-face': ['Nunito'],
       },
     },
   }
