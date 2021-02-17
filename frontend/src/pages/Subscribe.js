@@ -15,21 +15,32 @@ const useStyles = makeStyles((theme) => ({
         listStyleType: 'disc',
         listStylePosition: 'inside'
     },
-    cssLabel: {
-        color : 'green'
+    textField: {
+        height: 70,
+        width: 650,
+        textAlign: 'center'
     },
-
+    cssLabel: {
+        color: `${theme.palette.secondary.main} !important`,
+        fontWeight: 400,
+        fontStyle: 'italic',
+        fontSize: '25px',
+        margin: 'auto',
+        textAlign: 'center'
+    },
     cssOutlinedInput: {
         '&$cssFocused $notchedOutline': {
-            borderColor: `${theme.palette.primary.main} !important`,
+            borderColor: `${theme.palette.secondary.main} !important`,
+            borderWidth: '5px',
         }
     },
 
     cssFocused: {},
 
     notchedOutline: {
-        borderWidth: '5px',
-        borderColor: 'green !important'
+        borderWidth: '2px',
+        borderColor: `${theme.palette.secondary.main} !important`,
+        borderWidth: '5px'
     },
 }));
 
@@ -56,28 +67,28 @@ export default function Subscribe() {
         <div className={classes.section}>
             <Grid container direction='column' justify='center' alignItems='center' spacing={9}>
                 <Grid item>
-                    <Typography variant='h3' color='primary'>
+                    <Typography variant='h3' color='textPrimary'>
                         How can I be the first to use it?
                     </Typography>
                 </Grid>
                 <Grid item>
-                    <Typography variant='body1' color='primary' align='center'>
+                    <Typography variant='body1' color='textPrimary' align='center'>
                         You can subscribe! In addition to being first in line for our launch, you'll receive a weekly newsletter full of:
                     </Typography>
                 </Grid>
                 <Grid item container direction='column' justify='left'>
                     <Grid item>
-                        <Typography variant='h5' className={classes.newsletterInfo}>virtual playdate ideas</Typography>
+                        <Typography variant='h5' color='textPrimary' className={classes.newsletterInfo}>virtual playdate ideas</Typography>
                     </Grid>
                     <Grid item>
-                        <Typography variant='h5' className={classes.newsletterInfo}>fun links and resources to use while virtual</Typography>
+                        <Typography variant='h5' color='textPrimary' className={classes.newsletterInfo}>fun links and resources to use while virtual</Typography>
                     </Grid>
                     <Grid item>
-                        <Typography variant='h5' className={classes.newsletterInfo}>cool projects and DIYs to do from home</Typography>
+                        <Typography variant='h5' color='textPrimary' className={classes.newsletterInfo}>cool projects and DIYs to do from home</Typography>
                     </Grid>
                 </Grid>
                 <Grid item>
-                    <Typography variant='body2' color='primary' align='center'>
+                    <Typography variant='body2' color='textPrimary' align='center'>
                         ...Delivered right to your inbox every week!
                     </Typography>
                 </Grid>
@@ -85,9 +96,9 @@ export default function Subscribe() {
                     <Grid item>
                         <TextField 
                             id="outlined-search" 
-                            label="Search field" 
-                            type="search" 
+                            label="Enter your email here..." 
                             variant="outlined" 
+                            color='secondary'
                             className={classes.textField}
                             InputLabelProps={{
                                 classes: {

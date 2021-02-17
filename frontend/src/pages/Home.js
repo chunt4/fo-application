@@ -7,19 +7,22 @@ import background from '../images/home_background.jpg'
 const useStyles = makeStyles((theme) => ({
     background: {
         backgroundImage: `url(${background})`,
-        height: '100vh',
-        paddingLeft: '50%'
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover',
+        paddingLeft: '50%',
+        paddingBottom: '230px'
     },
     messageContainer: {
-        paddingTop: '28%', 
-        paddingRight: '20%'
+        paddingTop: '260px',
+        paddingRight: '25%'
+        
     },
     message: {
         width: '100%',
         padding: theme.spacing(2), 
     },
     messageButtons: {
-        color: '#FFF'
+        color: theme.palette.primary.main
     }
 }));
 
@@ -48,12 +51,16 @@ export default function Home() {
                     item 
                     container 
                     direction='row'
-                    justify='flex-start'
+                    justify='space-between'
                     alignItems='center'
                     className={classes.message}
                 >
-                    <Button variant='contained' className={classes.messageButtons} >LEARN MORE</Button>
-                    <Button variant='outlined' className={classes.messageButtons} style={{ marginLeft: '30px' }}>Parent Sign Up</Button>
+                    <Grid item>
+                        <Button variant='contained' className={classes.messageButtons}>LEARN MORE</Button>
+                    </Grid>
+                    <Grid item>
+                        <Button variant='outlined' className={classes.messageButtons}>Parent Sign Up</Button>
+                    </Grid>
                 </Grid>
                 
             </Grid>

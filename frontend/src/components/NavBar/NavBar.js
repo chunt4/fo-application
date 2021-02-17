@@ -33,10 +33,10 @@ export default function NavBar() {
       <Toolbar>
         <a className={classes.logoContainer} href='/'><img src={logo} alt='FriendOver' className={classes.logoImage} /></a>
         <div>
-          <Link variant='subtitle2' color='inherit' className={classes.navButton}>Home</Link>
-          <Link variant='subtitle2' color='inherit' className={classes.navButton}>About Friendover</Link>
-          <Link variant='subtitle2' color='inherit' className={classes.navButton}>About the Team</Link>
-          <Link variant='subtitle2' color='inherit' className={classes.navButton}>Newsletters {'&'} Blogs</Link>
+          <Link variant='subtitle2' color='textSecondary' className={classes.navButton}>Home</Link>
+          <Link variant='subtitle2' color='textSecondary' className={classes.navButton}>About Friendover</Link>
+          <Link variant='subtitle2' color='textSecondary' className={classes.navButton}>About the Team</Link>
+          <Link variant='subtitle2' color='textSecondary' className={classes.navButton}>Newsletters {'&'} Blogs</Link>
         </div>
 
       </Toolbar>

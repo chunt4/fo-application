@@ -8,11 +8,14 @@ const Theme = createMuiTheme({
   },
   palette: {
     primary: {
-        main: '#140c57'
+      main: '#49bdde'
+    },
+    secondary: {
+      main: '#5fddb6'
     },
     text: {
-        primary: '#140c57',
-        secondary: '#FFF',
+      primary: '#140c57',
+      secondary: '#FFF',
     }
   },
   typography: {
@@ -54,6 +57,12 @@ const Theme = createMuiTheme({
     body2: {
       fontWeight: 400,
       fontSize: '30px'
+      // '@media (min-width:600px)': {
+      //   fontSize: '20px',
+      // },
+      // '@media (min-width:1280px)': {
+      //   fontSize: '30px',
+      // },
     },
     button: {
       fontWeight: 900,
@@ -71,6 +80,7 @@ const Theme = createMuiTheme({
         fontSize: '1rem',
         width: '300px', 
         borderRadius: '35px',
+        color: '#5fddb6'
       },
       outlined: {
         height: '63px',
@@ -78,14 +88,35 @@ const Theme = createMuiTheme({
         fontSize: '1rem',
         width: '300px', 
         borderRadius: '35px',
+        color: '#5fddb6'
       },
       text: {
-        fontSize: '.8rem'
+        fontSize: '25px'
+      }
+    },
+    MuiOutlinedInput: {
+      input: {
+        fontSize: '25px',
+        color: '#5fddb6'
       },
+    },
+    MuiInputLabel: {
+      outlined: {
+        transform: 'translate(24px, 20px) scale(1)',
+        '&$shrink': {
+          transform: 'translate(24px, -12px) scale(.75)',
+          backgroundColor: 'transparent'
+        }
+      },
+    },
+    PrivateNotchedOutline: {
+      legendNotched: {
+        maxWidth: 215
+      }
     },
     MuiCssBaseline: {
       '@global': {
-        '@font-face': ['Nunito'],
+        '@font-face': ['Nunito']
       },
     },
   }
