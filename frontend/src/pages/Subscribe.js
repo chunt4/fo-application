@@ -1,14 +1,16 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Button, Grid, Typography, TextField  } from '@material-ui/core';
-import renee from '../images/renee.jpg'
-import chris from '../images/chris.jpeg'
-import daniel from '../images/daniel.jpg'
+import { Button, Grid, Typography, TextField, useMediaQuery } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
     section: {
         backgroundColor: theme.backgroundColor.white,
-        padding: '210px 318px'
+        [theme.breakpoints.up('lg')]: {
+            padding: '200px 318px'
+        },
+        [theme.breakpoints.down('md')]: {
+            padding: '50px 30px'
+        },
     },
     newsletterInfo: {
         display: 'list-item',
@@ -17,14 +19,24 @@ const useStyles = makeStyles((theme) => ({
     },
     textField: {
         height: 70,
-        width: 650,
+        [theme.breakpoints.up('lg')]: {
+            width: '650px'
+        },
+        [theme.breakpoints.down('md')]: {
+            width: '300px'
+        },
         textAlign: 'center'
     },
     cssLabel: {
         color: `${theme.palette.secondary.main} !important`,
         fontWeight: 400,
         fontStyle: 'italic',
-        fontSize: '25px',
+        [theme.breakpoints.up('lg')]: {
+            fontSize: '1.5625rem',
+        },
+        [theme.breakpoints.down('md')]: {
+            fontSize: '1rem',
+        },
         margin: 'auto',
         textAlign: 'center'
     },
@@ -38,7 +50,6 @@ const useStyles = makeStyles((theme) => ({
     cssFocused: {},
 
     notchedOutline: {
-        borderWidth: '2px',
         borderColor: `${theme.palette.secondary.main} !important`,
         borderWidth: '5px'
     },
@@ -46,28 +57,12 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Subscribe() {
     const classes = useStyles();
-    const profiles = [
-        {
-            'name': 'Renee Yaseen', 
-            'description': 'Founder, CEO',
-            'picture': renee
-        },
-        {
-            'name': 'Chris Hunt', 
-            'description': 'Co-Founder',
-            'picture': chris
-        },
-        {
-            'name': 'Daniel Yaseen', 
-            'description': 'Boy Wonder',
-            'picture': daniel
-        }
-    ]
+    const isSmall = useMediaQuery('(max-width:1200px)');
     return (
-        <div className={classes.section}>
-            <Grid container direction='column' justify='center' alignItems='center' spacing={9}>
+        <div className={classes.section} id='subscribe'>
+            <Grid container direction='column' justify='center' alignItems='center' spacing={isSmall ? 5 : 9}>
                 <Grid item>
-                    <Typography variant='h3' color='textPrimary'>
+                    <Typography variant='h3' color='textPrimary' align='center'>
                         How can I be the first to use it?
                     </Typography>
                 </Grid>
@@ -95,9 +90,9 @@ export default function Subscribe() {
                 <Grid item container direction='row' justify='center' alignItems='center' color='primary' spacing={3}>
                     <Grid item>
                         <TextField 
-                            id="outlined-search" 
-                            label="Enter your email here..." 
-                            variant="outlined" 
+                            id='outlined-search'
+                            label='Enter your email here...' 
+                            variant='outlined' 
                             color='secondary'
                             className={classes.textField}
                             InputLabelProps={{
@@ -107,12 +102,13 @@ export default function Subscribe() {
                                 },
                             }}
                             InputProps={{
-                            classes: {
-                                root: classes.cssOutlinedInput,
-                                focused: classes.cssFocused,
-                                notchedOutline: classes.notchedOutline,
-                            }
-                        }}/>
+                                classes: {
+                                    root: classes.cssOutlinedInput,
+                                    focused: classes.cssFocused,
+                                    notchedOutline: classes.notchedOutline,
+                                }
+                            }}
+                        />
                     </Grid>
                     <Grid item>
                         <Button variant='contained'>Subscribe Now</Button>
@@ -120,5 +116,5 @@ export default function Subscribe() {
                 </Grid>
             </Grid>
         </div>
-);
+    );
 }

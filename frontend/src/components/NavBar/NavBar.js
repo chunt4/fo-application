@@ -2,6 +2,7 @@ import React from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import { AppBar, Link, Toolbar } from '@material-ui/core'
 import logo from '../../images/whiteall.png'
+import MediaQuery from 'react-responsive'
 
 const useStyles = makeStyles((theme) => ({
   logoContainer: {
@@ -13,7 +14,12 @@ const useStyles = makeStyles((theme) => ({
   navContainer: {
     background: 'transparent',
     boxShadow: 'none',
-    padding: '110px 126px'
+    [theme.breakpoints.up('lg')]: {
+      padding: '110px 126px'
+    },
+    [theme.breakpoints.down('md')]: {
+      padding: '10%'
+    },
   },
 
   navButton: {
@@ -31,14 +37,15 @@ export default function NavBar() {
   return (
     <AppBar position="absolute" className={classes.navContainer}>
       <Toolbar>
-        <a className={classes.logoContainer} href='/'><img src={logo} alt='FriendOver' className={classes.logoImage} /></a>
-        <div>
-          <Link variant='subtitle2' color='textSecondary' className={classes.navButton}>Home</Link>
-          <Link variant='subtitle2' color='textSecondary' className={classes.navButton}>About Friendover</Link>
-          <Link variant='subtitle2' color='textSecondary' className={classes.navButton}>About the Team</Link>
-          <Link variant='subtitle2' color='textSecondary' className={classes.navButton}>Newsletters {'&'} Blogs</Link>
-        </div>
-
+        <MediaQuery minWidth={1200}>
+          <a className={classes.logoContainer} href='/'><img src={logo} alt='FriendOver' className={classes.logoImage} /></a>
+          <div>
+            <Link variant='subtitle2' color='textSecondary' className={classes.navButton} href='#home'>Home</Link>
+            <Link variant='subtitle2' color='textSecondary' className={classes.navButton} href='#about'>About Friendover</Link>
+            <Link variant='subtitle2' color='textSecondary' className={classes.navButton} href='#team'>About the Team</Link>
+            <Link variant='subtitle2' color='textSecondary' className={classes.navButton} href='#subscribe'>Newsletters {'&'} Blogs</Link>
+          </div>
+        </MediaQuery>
       </Toolbar>
     </AppBar>
   )

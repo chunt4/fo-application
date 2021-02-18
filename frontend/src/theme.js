@@ -1,7 +1,15 @@
 import { createMuiTheme } from '@material-ui/core/styles';
 
 const Theme = createMuiTheme({
-  
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 600,
+      md: 960,
+      lg: 1200,
+      xl: 1920
+    }
+  },
   backgroundColor: {
     white: '#fafafa',
     blue: '#BAD2E3'
@@ -26,43 +34,62 @@ const Theme = createMuiTheme({
     },
     h3: {
       fontWeight: 900,
-      fontSize: '60px'
+      '@media (max-width:1200px)': {
+        fontSize: '2rem'
+      },
+      fontSize: '3.75rem'  
     },
     h4: {
       fontWeight: 800,
-      fontSize: '38px'
+      '@media (max-width:1200px)': {
+        fontSize: '1.5rem'
+      },
+      fontSize: '2.375rem'  
     },
     h5: {
       fontWeight: 600,
-      fontSize: '30px'
+      '@media (max-width:1200px)': {
+        fontSize: '1rem'
+      },
+      fontSize: '1.875rem'  
     },
     h6: {
       fontWeight: 400,
-      fontSize: '30px',
+      '@media (max-width:1200px)': {
+        lineHeight: 1.3,
+        fontSize: '1.2rem'
+      },
+      fontSize: '1.875rem',
       lineHeight: 1.5
     },
     subtitle1: {
       fontWeight: 900,
-      fontSize: '30px'
+      '@media (max-width:1200px)': {
+        fontSize: '1.4rem'
+      },
+      fontSize: '1.875rem' 
     },
     subtitle2: {
       fontWeight: 900,
-      fontSize: '15px',
+      '@media (max-width:1200px)': {
+        fontSize: '.625.rem'
+      },
+      fontSize: '.9375rem',
       textTransform: 'uppercase'
     },
     body1: {
       fontWeight: 400,
-      fontSize: '40px'
+      '@media (max-width:1200px)': {
+        fontSize: '1.2rem'
+      },
+      fontSize: '2.5rem' 
     },
     body2: {
       fontWeight: 400,
-      fontSize: '30px'
-      // '@media (min-width:600px)': {
-      //   fontSize: '20px',
-      // },
-      // '@media (min-width:1280px)': {
-      //   fontSize: '30px',
-      // },
+      '@media (max-width:1200px)': {
+        fontSize: '1.2rem'
+      },
+      fontSize: '1.875rem' 
     },
     button: {
       fontWeight: 900,
@@ -91,12 +118,18 @@ const Theme = createMuiTheme({
         color: '#5fddb6'
       },
       text: {
-        fontSize: '25px'
+        '@media (max-width:1200px)': {
+          fontSize: '1rem'
+        },
+        fontSize: '1.5625rem'
       }
     },
     MuiOutlinedInput: {
       input: {
-        fontSize: '25px',
+        '@media (max-width:1200px)': {
+          fontSize: '1rem'
+        },
+        fontSize: '1.5625rem',
         color: '#5fddb6'
       },
     },

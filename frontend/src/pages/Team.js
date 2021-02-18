@@ -11,19 +11,33 @@ const useStyles = makeStyles((theme) => ({
         backgroundImage: `url(${background})`,
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
-        padding: '200px 318px'
+        [theme.breakpoints.up('lg')]: {
+            padding: '200px 318px'
+        },
+        [theme.breakpoints.down('md')]: {
+            padding: '50px 30px'
+        },
     },
     avatarContainer: {
         margin: '16px 22px'
     },
     avatarImage: {
-        height: 260, 
-        width: 260, 
-        border: '10px solid #FFF', 
-        margin: '42px 0px'
+        [theme.breakpoints.up('lg')]: {
+            margin: '42px 0px',
+            height: 260, 
+            width: 260, 
+            border: '10px solid #FFF', 
+        },
+        [theme.breakpoints.down('md')]: {
+            height: 150, 
+            width: 150, 
+            border: '6px solid #FFF', 
+        },
     },
     teamText: {
-        marginTop: '54px'
+        [theme.breakpoints.up('lg')]: {
+            marginTop: '54px'
+        },        
     }
 }));
 
@@ -47,16 +61,16 @@ export default function Team() {
         }
     ]
     return (
-        <div className={classes.section}>
+        <div className={classes.section} id='team'>
             <Grid container direction='column' justify='center' alignItems='center' spacing={3}>
                 <Grid item>
-                    <Typography variant='h3' color='textSecondary'>
+                    <Typography variant='h3' color='textSecondary' align='center'>
                         Who are we?
                     </Typography>
                 </Grid>
                 <Grid item container direction='row' justify='space-between'>
                     {profiles.map((profile) => (
-                        <Grid container direction='column' justify='center' alignItems='center' xs={3} className={classes.avatarContainer}>
+                        <Grid container direction='column' justify='center' alignItems='center' xs={12} lg={3} className={classes.avatarContainer}>
                             <Grid item><Avatar alt="Renee Yaseen" src={profile.picture} className={classes.avatarImage} /></Grid>
                             <Grid item><Typography variant='subtitle1' color='textSecondary'>{profile.name}</Typography></Grid>
                             <Grid item><Typography variant='body2' color='textSecondary'>{profile.description}</Typography></Grid>
