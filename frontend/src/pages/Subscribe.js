@@ -1,6 +1,8 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Button, Grid, Typography, TextField, useMediaQuery } from '@material-ui/core';
+import instagram from '../images/instagram.png'
+import facebook from '../images/facebook.png'
 
 const useStyles = makeStyles((theme) => ({
     section: {
@@ -53,6 +55,11 @@ const useStyles = makeStyles((theme) => ({
         borderColor: `${theme.palette.secondary.main} !important`,
         borderWidth: '5px'
     },
+    socialIcons: {
+        height: '60px',
+        width: '60px',
+        cursor: 'pointer'
+    }
 }));
 
 export default function Subscribe() {
@@ -112,6 +119,14 @@ export default function Subscribe() {
                     </Grid>
                     <Grid item>
                         <Button variant='contained'>Subscribe Now</Button>
+                    </Grid>
+                </Grid>
+                <Grid item container justify='center' spacing={3}>
+                    <Grid item>
+                        <img src={facebook} className={classes.socialIcons} />
+                    </Grid>
+                    <Grid item>
+                        <img src={instagram} className={classes.socialIcons} />
                     </Grid>
                 </Grid>
             </Grid>

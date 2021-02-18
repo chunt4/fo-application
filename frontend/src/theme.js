@@ -12,7 +12,7 @@ const Theme = createMuiTheme({
   },
   backgroundColor: {
     white: '#fafafa',
-    blue: '#BAD2E3'
+    blue: '#140c57'
   },
   palette: {
     primary: {

@@ -6,7 +6,7 @@ import background from '../images/home_background.jpg'
 
 const useStyles = makeStyles((theme) => ({
     background: {
-        backgroundImage: `url(${background})`,
+        backgroundImage: `linear-gradient(to right, rgba(0, 0, 0, 0) 50%, ${theme.backgroundColor.blue}), url(${background})`,
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
         [theme.breakpoints.up('lg')]: {
