@@ -1,4 +1,5 @@
 # fo-application
 
-git clone 
+git clone https://github.com/chunt4/fo-application.git
+
 install requirements.txt
